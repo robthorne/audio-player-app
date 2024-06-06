@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app"></div>
+    <div id="global-control-console">
+        <button id="global-control-play-stop" onclick="controlTogglePlayStop()">&#x25B6;</button>
+        <input type="range" id="global-control-volume" min="0" max="100" value="100" onchange="controlSetVolume(this.value)">
+        <span class="speaker-icon">&#x1F50A;</span>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
