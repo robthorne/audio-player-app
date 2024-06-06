@@ -1,2 +1,2 @@
 # audio-player-app
-Early OM-PI version for amulti audio baby sleep applications
+Early OM-PI version for a multi audio player baby sleep application
