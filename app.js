@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const audioFiles = [
-        { src: "audio/pūtātara.wav", img: "images/pūtātara.jpeg" },
+        { src: "audio/pūtātara.wav", img: ""images/putangitangi.jpeg" },
         { src: "audio/soft-pūtōrino.wav", img: "images/putangitangi.jpeg" },
         { src: "audio/rehu.wav", img: "images/rehu+toroa.jpeg" },
         { src: "audio/kōauau.wav", img: "images/koauau+rakau.jpeg" },
