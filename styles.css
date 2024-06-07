@@ -13,7 +13,7 @@ body {
 #audio-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4px; /* Set gap to 4 pixels */
+    gap: 4px; /* Set uniform gap of 4 pixels for both horizontal and vertical */
     justify-items: center;
     align-items: center;
     flex: 1;
