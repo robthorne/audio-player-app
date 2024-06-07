@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         audioPlayer.className = "audio-player";
         audioPlayer.innerHTML = `
             <img src="${file.img}" alt="Audio Image" onclick="togglePlayer(${index})">
-            <audio id="audio-${index}" src="${file.src}" loop></audio>
+            <audio id="audio-${index}" src="${file.src}" loop preload="auto"></audio>
             <div class="controls">
                 <div class="volume-control">
                     <input type="range" class="volume-slider" min="0" max="100" step="25" value="100" onchange="setVolume(${index}, this.value)">
@@ -36,19 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function togglePlayer(index) {
     const audioPlayer = document.querySelectorAll(".audio-player")[index];
     const audio = document.getElementById(`audio-${index}`);
-    const globalControlPlayStopButton = document.getElementById("global-control-play-stop");
-    const isGlobalPlaying = globalControlPlayStopButton.innerHTML === "⏹"; // Stop symbol indicates global play mode
 
     audioPlayer.classList.toggle("disabled");
     if (audioPlayer.classList.contains("disabled")) {
         audio.pause();
         audio.currentTime = 0;
-        audio.removeAttribute("data-enabled");
     } else {
-        audio.setAttribute("data-enabled", "true");
-        if (isGlobalPlaying) {
-            audio.play();
-        }
+        audio.play();
     }
 }
 
@@ -66,7 +60,7 @@ function controlTogglePlayStop() {
 
     const allAudioPlayers = document.querySelectorAll("#audio-container audio");
     allAudioPlayers.forEach(audio => {
-        if (isPlaying && audio.hasAttribute("data-enabled")) {
+        if (isPlaying) {
             audio.play();
         } else {
             audio.pause();
@@ -74,7 +68,7 @@ function controlTogglePlayStop() {
         }
     });
 
-    controlPlayStopButton.innerHTML = isPlaying ? "⏹" : "▶"; // Toggle symbol
+    controlPlayStopButton.innerHTML = isPlaying ? "⏹" : "▶"; // Stop symbol
 }
 
 function controlSetVolume(value) {
