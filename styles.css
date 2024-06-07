@@ -7,8 +7,6 @@ body {
     height: 100vh;
     background-color: black;
     margin: 0;
-    position: relative;
-    overflow: hidden; /* Ensure body doesn't scroll */
 }
 
 #audio-container {
@@ -17,9 +15,9 @@ body {
     gap: 16px;
     justify-items: center;
     align-items: center;
-    flex: 1;
     width: 100%;
-    padding: 10px; /* Ensure there's padding to prevent edge overflow */
+    padding: 10px;
+    max-width: 1000px; /* Ensure the grid doesn't exceed a certain width */
 }
 
 .audio-player {
@@ -85,7 +83,6 @@ body {
     border: 1px solid #bbb;
     border-radius: 50%;
     cursor: pointer;
-    margin-top: -5px;
 }
 
 .volume-slider::-moz-range-thumb {
@@ -141,29 +138,6 @@ body {
 }
 
 #global-control-volume {
-    width: 200px; /* Increased width for global volume slider */
+    width: 200px; /* Twice the original length */
     margin: 0 20px;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    #audio-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .audio-player {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    #audio-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .audio-player {
-        width: 150px;
-        height: 150px;
-    }
 }
