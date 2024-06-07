@@ -13,7 +13,7 @@ body {
 #audio-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 4px; /* Set gap to 4 pixels */
     justify-items: center;
     align-items: center;
     flex: 1;
@@ -26,18 +26,18 @@ body {
 .audio-player {
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 8px;
+    padding: 4px;
     background-color: #fff;
     text-align: center;
     width: 100px; /* Fixed width */
-    height: 130px; /* Fixed height */
+    height: 100px; /* Fixed height */
     position: relative;
     transition: background-color 0.3s, opacity 0.3s;
 }
 
 .audio-player img {
-    width: 80px; /* Fixed size for image */
-    height: 80px; /* Fixed size for image */
+    width: 80px; /* Adjust size for image within player */
+    height: 80px; /* Adjust size for image within player */
     object-fit: cover;
     border-radius: 8px;
 }
