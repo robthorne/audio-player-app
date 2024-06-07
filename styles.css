@@ -12,13 +12,12 @@ body {
 
 #audio-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ensure a 3x3 grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 16px;
     justify-items: center;
     align-items: center;
     width: 100%;
-    max-width: 600px; /* Adjust the max-width to fit 3x3 grid */
-    padding: 10px;
+    max-width: 600px; /* Adjust this to fit your layout */
 }
 
 .audio-player {
@@ -27,15 +26,14 @@ body {
     padding: 16px;
     background-color: #fff;
     text-align: center;
-    width: 100%;
-    max-width: 150px;
+    width: 100px;
     position: relative;
     transition: background-color 0.3s, opacity 0.3s;
 }
 
 .audio-player img {
-    width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -51,6 +49,7 @@ body {
 
 .controls button, .controls input[type="range"] {
     margin-top: 4px;
+    display: block;
     width: 100%;
 }
 
@@ -80,6 +79,7 @@ body {
     border: 1px solid #bbb;
     border-radius: 50%;
     cursor: pointer;
+    margin-top: -5px;
 }
 
 .volume-slider::-moz-range-thumb {
@@ -117,7 +117,6 @@ body {
     padding: 10px;
     background-color: #fff;
     border-top: 1px solid #ccc;
-    flex-wrap: wrap;
 }
 
 #global-control-play-stop, #global-control-volume {
@@ -136,16 +135,6 @@ body {
 }
 
 #global-control-volume {
-    width: 100px;
+    width: 200px;
     margin: 0 20px;
-}
-
-@media (max-width: 600px) {
-    #audio-container {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-
-    .audio-player {
-        max-width: 120px;
-    }
 }
