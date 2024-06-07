@@ -36,8 +36,8 @@ body {
 }
 
 .audio-player img {
-    width: 90px; /* Fixed size for image */
-    height: 90px; /* Fixed size for image */
+    width: 80px; /* Fixed size for image */
+    height: 80px; /* Fixed size for image */
     object-fit: cover;
     border-radius: 8px;
 }
