@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const audioFiles = [
-        { src: "audio/pūtātara.wav", img: "images/_43O9926.jpeg" },
-        { src: "audio/soft-pūtōrino.wav", img: "images/putangitangi.jpeg" },
+        { src: "audio/pūtātara.wav", img: "images/_43O9926.jpeg" },
+        { src: "audio/soft-pūtōrino.wav", img: "images/putangitangi.jpeg" },
         { src: "audio/rehu.wav", img: "images/rehu+toroa.jpeg" },
-        { src: "audio/kōauau.wav", img: "images/koauau+rakau.jpeg" },
-        { src: "audio/Pūtōrino_Kōkiri.wav", img: "images/putorino.jpeg" },
+        { src: "audio/kōauau.wav", img: "images/koauau+rakau.jpeg" },
+        { src: "audio/Pūtōrino_Kōkiri.wav", img: "images/putorino.jpeg" },
         { src: "audio/Mirimiri_Kohatu.wav", img: "images/tumutumu+kohatu.jpeg" },
         { src: "audio/Kohatu_Rain.wav", img: "images/pakuru.jpeg" },
         { src: "audio/Porotiti_Gentle.wav", img: "images/koauau+ponga+ihu.jpeg" },
@@ -61,7 +61,9 @@ function controlTogglePlayStop() {
     const allAudioPlayers = document.querySelectorAll("#audio-container audio");
     allAudioPlayers.forEach(audio => {
         if (isPlaying) {
-            audio.play();
+            if (!audio.closest('.audio-player').classList.contains('disabled')) {
+                audio.play();
+            }
         } else {
             audio.pause();
             audio.currentTime = 0;
