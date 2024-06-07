@@ -30,14 +30,14 @@ body {
     background-color: #fff;
     text-align: center;
     width: 100px; /* Fixed width */
-    height: 110px; /* Fixed height */
+    height: 100px; /* Fixed height */
     position: relative;
     transition: background-color 0.3s, opacity 0.3s;
 }
 
 .audio-player img {
-    width: 100px; /* Fixed size for image */
-    height: 100px; /* Fixed size for image */
+    width: 90px; /* Fixed size for image */
+    height: 90px; /* Fixed size for image */
     object-fit: cover;
     border-radius: 8px;
 }
